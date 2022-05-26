@@ -1,5 +1,10 @@
 ## `@SpringBootApplication` 에 대해서
 
+- Application class에 적용되어 있는 이것!
+
+![스크린샷 2022-05-26 22 51 28](https://user-images.githubusercontent.com/61769743/170501262-52e6827d-b07e-4d8d-ad56-fcf002a32486.png)
+
+
 ![스크린샷 2022-05-26 22 13 22](https://user-images.githubusercontent.com/61769743/170500237-66fc45cb-1e6c-4a13-b2b0-c75e3b6bad9a.png)
 
 `@SpringBootApplication` 은 아래 3개의 특성으로 대체할 수 있음.
