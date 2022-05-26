@@ -32,7 +32,13 @@
 ### `@Configuration`
 
 - 다른 bean들을 등록하거나 다른 설정 클래스를 import할 수 있게끔 함.
-- 스프링에서 CGLIB라는 바이트코드 조작 라이브러리를 사용해서 AppConfig를 상속받은 임의의 클래스를 만들고 그것을 스프링 빈으로 등록
+- 스프링에서 CGLIB라는 바이트코드 조작 라이브러리를 사용해서 Configuration class를 상속받은 임의의 class를 만들고 그것을 스프링 빈으로 등록. 이 때 Bean을 싱글톤으로 유지할 수 있는 설정이 포함됨.
+    ```java
+    // @Configuration 미적용
+    nextstep.helloworld.config.javaConfig.AuthenticationPrincipalConfig@ed3bac5
+    // @Configuration 적용
+    nextstep.helloworld.config.javaConfig.AuthenticationPrincipalConfig$$EnhancerBySpringCGLIB$$73c802b6@78b9192
+    ```
 <img width="600" alt="스크린샷 2022-05-25 15 46 36" src="https://user-images.githubusercontent.com/61769743/170500505-b2c7c2c2-b547-4bcb-90c1-e7a66e83d5f1.png">
 
 ## `@Configuration` 과 `@SpringBootConfiguration` 의 차이
