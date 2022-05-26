@@ -54,15 +54,5 @@
 - `@Configuration`과의 다른점은 `@SpringBootConfiguration` 을 사용하면 설정을 자동으로 찾아낼 수 있다는 것. 단위 혹은 통합테스트에 필요함.
     - `@SpringBootTest` 에는 해당 annotation이 필요함. `@SpringBootConfiguration` 을 `@Configuration` 으로 대체하면 아래의 메시지가 발생.
         ![스크린샷 2022-05-26 22 04 27](https://user-images.githubusercontent.com/61769743/170500775-582458f7-68e4-4c29-af1c-4e53d03ec19e.png)
-
-    - `@Autowired` 로 빈을 자동 주입 받고 싶다면 `@SpringBootConfiguration` 이 필요하다는 뜻!!
-    - 자동주입이 필요없고 매번 ApplicationContext에서 Bean을 불러와도 된다면, 해당 어노테이션은 필요없음.
-        
-        ```java
-        ApplicationContext context = new AnnotationConfigApplicationContext(HelloApplication.class);
-        String[] beanDefinitionNames = context.getBeanDefinitionNames();
-        
-        AuthService authService = context.getBean(AuthService.class);
-        ```
         
 - 애플리케이션에 단 한 개만 존재해야 함. 즉, `@SpringBootApplication` 과 `@SpringBootConfiguration` 은 공존할 수 없음.
