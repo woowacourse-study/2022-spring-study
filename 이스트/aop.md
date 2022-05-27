@@ -44,7 +44,7 @@ AOP는 Aspect Oriented Programming 의 약자
 
 ### Spring AOP
 
-![Screen Shot 2022-05-26 at 1 27 28 AM](https://user-images.githubusercontent.com/64204666/170512857-7750b2bb-6061-488e-9d52-121c31ff7c80.png)
+![Screen Shot 2022-05-26 at 2 02 03 AM](https://user-images.githubusercontent.com/64204666/170610048-129ef1ba-00e5-4b35-b344-3c041dcf25fe.png)
 
 이를 통해 공통 부가 기능을 사용하는 다수의 핵심 기능들을 지정하여 코드 중복을 줄일 수 있음
 
