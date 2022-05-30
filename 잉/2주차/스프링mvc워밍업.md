@@ -101,27 +101,27 @@ public class DumbheadFileter implements Filter{
 	private final DumbheadExtractor dumheadExtractor;
 
 	@Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println("Filter가 생성 됩니다.");
-    }
+   	 public void init(FilterConfig filterConfig) throws ServletException {
+        	System.out.println("Filter가 생성 됩니다.");
+    	}
 
-    @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("==========필터 시작!==========");
+   	 @Override
+    	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException 	{
+       	 	System.out.println("==========필터 시작!==========");
         
-       	// 멍청이를 거르자 
-        String dumbhead = dumheadPExtractor.extractor((HttpServletRequest) request);
-        if (dumbhead == null) {
-        	throw new DumbheadException("fuck off");
-        }
-        filterChain.doFilter(servletRequest, servletResponse);
-        System.out.println("==========필터 종료!==========");
-    }
+       		// 멍청이를 거르자 
+        	String dumbhead = dumheadPExtractor.extractor((HttpServletRequest) request);
+        	if (dumbhead == null) {
+        		throw new DumbheadException("fuck off");
+        	}
+        	filterChain.doFilter(servletRequest, servletResponse);
+        	System.out.println("==========필터 종료!==========");
+    	}
 
-    @Override
-    public void destroy() {
-        log.info("Filter가 사라집니다.");
-    }
+    	@Override
+    	public void destroy() {
+        	log.info("Filter가 사라집니다.");
+    	}
 
 }
 
@@ -133,11 +133,11 @@ public class DumbheadFileter implements Filter{
 @Configuration 
 public class Config() {
 	@Bean
-    public DumbheadFilter dumheadFilter() {
-    	FilterRegistrationBean registrationBean = new FilterRegistrationBean(new DumbheadFilter());
-        registrationBean.setOrder(1);
-        return registrationBean;
-    }
+   	 public DumbheadFilter dumheadFilter() {
+    		FilterRegistrationBean registrationBean = new FilterRegistrationBean(new DumbheadFilter());
+        	registrationBean.setOrder(1);
+        	return registrationBean;
+   	 }
 }
 ```
 
