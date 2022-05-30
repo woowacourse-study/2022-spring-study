@@ -14,6 +14,8 @@
 
 트랜잭션 처리중 아직 commit 되지 않은 데이터를 다른 트랜잭션이 읽는 것을 허용
 
+![img.png](img.png)
+
 ```java
 @RestController
 public class IsolationController {
@@ -76,6 +78,8 @@ public class IsolationDao {
 dirty read 방지 : 트랜잭션이 commit 되어 확정된 데이터만을 읽도록 허용
 
 커밋이 완료된 트랜잭션의 변경 사항만 다른 트랜잭션에서 조회 가능
+
+![img_5.png](img_5.png)
 
 ```java
 @RestController
@@ -142,6 +146,8 @@ public class IsolationDao {
 
 트랜잭션이 완료될 때까지 SELECT 문장이 사용하는 모든 데이터에 shared lock이 걸린다.
 
+![img_6.png](img_6.png)
+
 ```java
 @Service
 public class IsolationService {
@@ -188,7 +194,6 @@ public class IsolationDao {
 ![img_4.png](img_4.png)
 
 이를 `phantom read` 라고 함
-
 
 ### SERIALIZABLE (직렬화 가능, level 3)
 완벽한 읽기 일관성 모드 제공(가장 엄격함)
