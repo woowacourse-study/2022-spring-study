@@ -208,8 +208,6 @@ public class ControllerMapping {
 ## onRefresh() == init() 동작 과정
 
 - resolver들과 **handlerMappings**를 초기화한다.
-- dispatcherServlet은 HttpServletBean의 자손이다.
-- DispatcherServlet에는 init()을 구현하지 않고, HttpServletBean의 init() 메소드를 사용한다.
 
 ```java
 @Override
