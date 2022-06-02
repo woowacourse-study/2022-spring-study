@@ -189,7 +189,8 @@ public class ControllerMapping {
     	<url-pattern>/</url-pattern>
     </servlet-mapping>
     ```
-    
+- SpringBoot에서는 DispatcherServletAutoConfiguration으로 자동 설정됨
+
 ![장바구니-3](https://user-images.githubusercontent.com/61769743/171662910-a7194c0e-430a-4439-920d-211b7632fc65.jpg)
 
 ## DispatcherServlet의 동작 과정
