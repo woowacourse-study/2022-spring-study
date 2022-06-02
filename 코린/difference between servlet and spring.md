@@ -32,7 +32,7 @@ Servlet 환경 mvc를 살펴보고, 스프링에서 제공하는 기능을 알�
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	
+
 	<servlet>
 		<servlet-name>CorinneServlet</servlet-name>
 	<servlet-class>controller.CorinneServlet</servlet-class>
@@ -100,7 +100,7 @@ public class CorinneServlet extends HttpServlet {
 
     @Override
     public void init() {
-				// 요청 Uri, Method에 맞는 Controller 정보를 가지고 있는 RequestMapping을 초기화
+        // 요청 Uri, Method에 맞는 Controller 정보를 가지고 있는 RequestMapping을 초기화
         controllerMapping = new ControllerMapping();
         controllerMapping.initMapping();
     }
@@ -121,7 +121,7 @@ public class CorinneServlet extends HttpServlet {
             // controller를 실행하고, 이동할 View uri를 불러온다.
             String uri = controller.execute(request, response);
 
-						// uri가 redirect라면 해당 uri로 redirect 시킨다.
+	    // uri가 redirect라면 해당 uri로 redirect 시킨다.
             if (uri.startsWith("redirect:")) {	
             	String targetUri = contextPath + uri.substring("redirect:".length());
             	response.sendRedirect(targetUri);        
