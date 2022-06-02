@@ -67,3 +67,40 @@ public class WebConfig implements WebMvcConfigurer {
 ```
 
 → 현재 버전에서는 추가 설정없이 가능
+
+- 특정 권한을 가진 사람만 접근 가능하게 하기
+    
+    ```java
+    @RestController
+    public class pppController {
+    
+        @GetMapping
+        public ResponseEntity<String> getDumbHead() {
+            return ResponseEntity.ok().body("you are dumb head");
+        }
+    }
+    ```
+    
+    ```java
+    public class DumbHeadInterceptor implements HandlerInterceptor {
+        @Override
+        public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+            final String role = AuthorizationExtractor.extract(request);
+            if (role.equals("dumbHead")) {
+                return true;
+            }
+            return false;
+        }
+    }
+    ```
+    
+    ```java
+    @Configuration
+    public class WebConfig implements WebMvcConfigurer {
+    
+        @Override
+        public void addInterceptors(InterceptorRegistry registry) {
+            registry.addInterceptor(new DumbHeadInterceptor());
+        }
+    }
+    ```
