@@ -371,5 +371,5 @@ public void destroy() {
 |CorinneServlet|DispatcherServlet|
 |------|---|
 |ControllerMapping|HandlerMapping|
-|Controller|HandlerAdapter|
+|Controller|Handler|
 |RequestDispatcher|View|
