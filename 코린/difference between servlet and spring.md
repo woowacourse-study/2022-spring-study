@@ -35,7 +35,7 @@ Servlet 환경 mvc를 살펴보고, 스프링에서 제공하는 기능을 알�
 
 	<servlet>
 		<servlet-name>CorinneServlet</servlet-name>
-	<servlet-class>controller.CorinneServlet</servlet-class>
+		<servlet-class>controller.CorinneServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CorinneServlet</servlet-name>
